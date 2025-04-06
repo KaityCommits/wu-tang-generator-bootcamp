@@ -1,55 +1,48 @@
-document.querySelector('#displayName').addEventListener('click', generateName)
+document.querySelector('button').addEventListener('click', generateName)
 
 function generateName(){
-    document.getElementById("generate").addEventListener("click", function () {
-        // Get all the selected values
         let vibe = document.querySelector('input[name="vibe"]:checked')?.value
         let power = document.querySelector('input[name="superpower"]:checked')?.value
         let animal = document.querySelector('input[name="animal"]:checked')?.value
         let rap = document.querySelector('input[name="rap"]:checked')?.value
         let move = document.querySelector('input[name="move"]:checked')?.value
     
-        // Check if all fields are selected
         if (!vibe || !power || !animal || !rap || !move) {
-            document.getElementById("#displayName").textContent = "Answer all the questions first, warrior 🥷"
+            document.getElementById("displayName").textContent = "Answer all questions."
             return
         }
     
         let firstPart = {
-            Chill: "Silent",
-            Spontaneous: "Wild",
-            Mysterious: "Ghost"
+            chill: "Solo",
+            spontaneous: "Wild",
+            mysterious: "Ghost"
         }
     
         let powerPart = {
-            Mindreader: "Mystic",
-            Teleportation: "Shadow",
-            Invisibility: "Hidden"
+            mindreader: "Mystic",
+            teleportation: "Shadow",
+            invisibility: "Hidden"
         }
     
         let animalPart = {
-            Bunny: "Rabbit",
-            Tiger: "Tiger",
-            Bear: "Bear"
+            bunny: "Rabbit",
+            tiger: "Tiger",
+            bear: "Bear"
         }
     
         let rapStyle = {
-            Storyteller: "the Prophet",
-            Freestyle: "the Rhyme Slayer",
-            Battle: "the Blade"
+            storyteller: "the Prophet",
+            freestyle: "the Rhyme Slayer",
+            battle: "the Blade"
         }
     
         let moveStyle = {
-            "Moves in Silence": "of the East",
-            "Makes an Entrance": "the Thunder",
-            "Stays Out the Way": "the Lone Wolf"
+            "moves in silence": "of the Hush",
+            "makes an entrance": "of the Loud",
+            "stays out the way": "of the Lonely"
         }
     
-        // Combine the parts into a name
         let wuTangName = firstPart[vibe] + " " + powerPart[power] + " " + animalPart[animal] + " " + rapStyle[rap] + " " + moveStyle[move];
-    
-        // Display the result
-        document.getElementById("#displayName").textContent = "Your Wu-Tang name is: " + wuTangName;
-    })
-    
-}
+
+        document.getElementById("displayName").textContent = "Your Wu-Tang name is: " + wuTangName;
+    }
